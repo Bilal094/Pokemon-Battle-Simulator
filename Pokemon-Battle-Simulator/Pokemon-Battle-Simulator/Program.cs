@@ -20,7 +20,7 @@ class Program
 
             if (newName != "n")
             {
-                pokemon.name = newName;
+                pokemon.setName(newName);
             }
             else
             {
@@ -29,7 +29,7 @@ class Program
 
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Charmander does its battle cry 10 times: " + pokemon.name.ToUpper() + "!");
+                Console.WriteLine("Charmander does its battle cry 10 times: " + pokemon.getName().ToUpper() + "!");
             }
         }
     }
@@ -44,5 +44,15 @@ class Charmander
     public Charmander(string defaultName)
     {
         name = defaultName;
+    }
+
+    public string getName()
+    {
+        return name;
+    }
+
+    public string setName(string n)
+    {
+        return name = n;
     }
 }
