@@ -17,15 +17,20 @@ namespace Pokemon_Battle_Simulator
             Name = name;
         }
 
-        public void throw_ball(int count)
+        public Pokeball throw_ball(int count)
         {
             Pokeball thrownBall = belt[count];
-            thrownBall.open_ball();
+            return thrownBall;
         }
 
         public void add_balls(Pokeball pokeball)
         {
             belt.Add(pokeball);
+        }
+
+        public List<Pokeball> get_belt()
+        {
+            return belt;
         }
     }
 }

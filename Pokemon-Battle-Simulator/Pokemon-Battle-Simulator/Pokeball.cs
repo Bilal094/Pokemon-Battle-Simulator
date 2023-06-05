@@ -9,18 +9,22 @@ namespace Pokemon_Battle_Simulator
     public class Pokeball
     {
         public string Name { get; set; }
-        public Charmander Pokemon { get; set; }
+        public Pokemon Pokemon { get; set; }
 
-        public Pokeball(Charmander charmander)
+        public Pokeball(Pokemon _pokemon)
         {
-            Pokemon = charmander;
+            Pokemon = _pokemon;
             Name = Pokemon.Name;
         }
 
         public void open_ball()
         {
             Console.WriteLine(this.Name + " is released!");
-            Console.WriteLine(this.Name + " does its battle cry: " + this.Name.ToUpper() + "!");
+            
+        }
+
+        public void close_ball()
+        {
             Console.WriteLine(this.Name + " returns to its pokeball...");
         }
     }

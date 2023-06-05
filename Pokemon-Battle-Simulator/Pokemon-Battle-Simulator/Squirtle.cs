@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Battle_Simulator
 {
-    // Pokemon Classes
-    public class Charmander : Pokemon
+    public class Squirtle : Pokemon
     {
-        public Charmander(string name) : base(name)
+        public Squirtle(string name) : base(name)
         {
             this.Name = name;
-            this.Strength = "fire";
-            this.Weakness = "water";
+            this.Strength = "water";
+            this.Weakness = "leaf";
         }
 
         public override void battle_cry()
         {
-            Console.WriteLine("Charmander does its battle cry: " + this.Name.ToUpper() + "!");
+            Console.WriteLine("Squirtle does its battle cry: " + this.Name.ToUpper() + "!");
         }
     }
 }
