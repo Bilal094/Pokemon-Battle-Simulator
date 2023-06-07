@@ -12,7 +12,7 @@ namespace Pokemon_Battle_Simulator
         {
             this.Name = name;
             this.Strength = "water";
-            this.Weakness = "leaf";
+            this.Weakness = "grass";
         }
 
         public override void battle_cry()

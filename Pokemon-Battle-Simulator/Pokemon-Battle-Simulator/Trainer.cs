@@ -9,28 +9,60 @@ namespace Pokemon_Battle_Simulator
 {
     internal class Trainer
     {
+        //private int index;
         public List<Pokeball> belt = new List<Pokeball>();
         public string Name { get; set; }
+        private Pokeball ThrownBall { get; set; }
+        Random random = new Random();
+
 
         public Trainer(string name)
         {
             Name = name;
         }
 
-        public Pokeball throw_ball(int count)
+        public Pokeball throw_ball()
         {
-            Pokeball thrownBall = belt[count];
-            return thrownBall;
+            if (belt.Count > 0)
+            {
+                // Pick a random pokeball
+                int index = random.Next(belt.Count);
+                ThrownBall = belt[index];
+                return ThrownBall;
+            } else
+            {
+                return null;
+
+            }
         }
 
-        public void add_balls(Pokeball pokeball)
+        public void create_balls(string name, int count)
         {
-            belt.Add(pokeball);
+            if (count == 1)
+            {
+                belt.Add(new Pokeball(new Charmander(name)));
+                belt.Add(new Pokeball(new Charmander(name)));
+            } else if (count == 2)
+            {
+                belt.Add(new Pokeball(new Squirtle(name)));
+                belt.Add(new Pokeball(new Squirtle(name)));
+            } else if (count == 3)
+            {
+                belt.Add(new Pokeball(new Bulbasaur(name)));
+                belt.Add(new Pokeball(new Bulbasaur(name)));
+            }
         }
 
-        public List<Pokeball> get_belt()
+        public List<Pokeball> getBelt()
         {
-            return belt;
+            return this.belt;
+        }
+
+        public void removePokeball()
+        {
+            if (this.belt.Contains(ThrownBall)) {
+                this.belt.Remove(ThrownBall);
+            }
         }
     }
 }
