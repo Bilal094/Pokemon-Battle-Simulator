@@ -44,8 +44,13 @@ public class Program
             while (trainer1.belt.Count > 0 || trainer2.belt.Count > 0)
             {
                 arena.beginBattle();
-                if (trainer1.belt.Count == 0 || trainer2.belt.Count == 0)
+                if (trainer2.belt.Count == 0)
                 {
+                    Console.WriteLine($"Trainer {trainer1.Name} wins!");
+                    break;
+                } else if (trainer1.belt.Count == 0)
+                {
+                    Console.WriteLine($"Trainer {trainer2.Name} wins!");
                     break;
                 }
             }
@@ -61,7 +66,6 @@ public class Program
                 arena.updateBattle();
                 arena.BattleCount = arena.updateBattle();
             }
-
         }
     }
 }

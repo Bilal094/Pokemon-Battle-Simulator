@@ -22,10 +22,5 @@ namespace Pokemon_Battle_Simulator
             Console.WriteLine(this.Name + " is released!");
             
         }
-
-        public void close_ball()
-        {
-            Console.WriteLine(this.Name + " returns to its pokeball...");
-        }
     }
 }

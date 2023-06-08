@@ -51,6 +51,5 @@ namespace Pokemon_Battle_Simulator
                 return winner;
             }
         }
-
     }
 }

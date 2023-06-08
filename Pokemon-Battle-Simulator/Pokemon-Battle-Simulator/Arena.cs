@@ -42,7 +42,9 @@ namespace Pokemon_Battle_Simulator
             Pokeball thrownBallTwo = TrainerTwo.throw_ball();
 
             // The 2 pokeballs are opened
-            if(thrownBallOne != null && thrownBallTwo != null)
+            thrownBallOne.open_ball();
+            thrownBallTwo.open_ball();
+            if (thrownBallOne != null && thrownBallTwo != null)
             {
                 // The 2 pokemons do their battle cry
                 thrownBallOne.Pokemon.battle_cry();
