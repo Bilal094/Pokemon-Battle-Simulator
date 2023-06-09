@@ -8,11 +8,11 @@ namespace Pokemon_Battle_Simulator
 {
     public class Squirtle : Pokemon
     {
-        public Squirtle(string name) : base(name)
+        public Squirtle(string name, PokemonType strength, PokemonType weakness) : base(name, strength, weakness)
         {
             this.Name = name;
-            this.Strength = "water";
-            this.Weakness = "grass";
+            this.Strength = strength;
+            this.Weakness = weakness;
         }
 
         public override void battle_cry()

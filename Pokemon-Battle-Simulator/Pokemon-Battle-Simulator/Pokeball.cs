@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Battle_Simulator
 {
-    public class Pokeball
+    public sealed class Pokeball
     {
         public string Name { get; set; }
-        public Pokemon Pokemon { get; set; }
+        public readonly Pokemon Pokemon;
 
         public Pokeball(Pokemon _pokemon)
         {

@@ -8,13 +8,21 @@ namespace Pokemon_Battle_Simulator
 {
     public abstract class Pokemon
     {
-        public string Name { get; set; }
-        public string Strength { get; set; }
-        public string Weakness { get; set; }
+        public enum PokemonType
+        {
+            Fire,
+            Water,
+            Grass,
+        }
+        public string Name { get; protected set; }
+        protected internal PokemonType Strength { get; protected set; }
+        protected internal PokemonType Weakness { get; protected set; }
 
-        public Pokemon(string name)
+        public Pokemon(string name, PokemonType strength, PokemonType weakness)
         {
             Name = name;
+            Strength = strength;
+            Weakness = weakness;
         }
         public abstract void battle_cry();
     }

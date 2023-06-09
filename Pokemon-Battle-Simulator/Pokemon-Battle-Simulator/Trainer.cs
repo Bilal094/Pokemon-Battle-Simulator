@@ -23,7 +23,7 @@ namespace Pokemon_Battle_Simulator
 
         public Pokeball throw_ball()
         {
-            if (belt.Count > 0)
+                if (belt.Count > 0)
             {
                 // Pick a random pokeball
                 int index = random.Next(belt.Count);
@@ -40,16 +40,18 @@ namespace Pokemon_Battle_Simulator
         {
             if (count == 1)
             {
-                belt.Add(new Pokeball(new Charmander(name)));
-                belt.Add(new Pokeball(new Charmander(name)));
-            } else if (count == 2)
+                belt.Add(new Pokeball(new Charmander(name, Pokemon.PokemonType.Fire, Pokemon.PokemonType.Water)));
+                belt.Add(new Pokeball(new Charmander(name, Pokemon.PokemonType.Fire, Pokemon.PokemonType.Water)));
+            }
+            else if (count == 2)
             {
-                belt.Add(new Pokeball(new Squirtle(name)));
-                belt.Add(new Pokeball(new Squirtle(name)));
-            } else if (count == 3)
+                belt.Add(new Pokeball(new Squirtle(name, Pokemon.PokemonType.Water, Pokemon.PokemonType.Grass)));
+                belt.Add(new Pokeball(new Squirtle(name, Pokemon.PokemonType.Water, Pokemon.PokemonType.Grass)));
+            }
+            else if (count == 3)
             {
-                belt.Add(new Pokeball(new Bulbasaur(name)));
-                belt.Add(new Pokeball(new Bulbasaur(name)));
+                belt.Add(new Pokeball(new Bulbasaur(name, Pokemon.PokemonType.Grass, Pokemon.PokemonType.Fire)));
+                belt.Add(new Pokeball(new Bulbasaur(name, Pokemon.PokemonType.Grass, Pokemon.PokemonType.Fire)));
             }
         }
 
