@@ -12,6 +12,8 @@ namespace Pokemon_Battle_Simulator
         public Trainer TrainerOne { get; set; }
         public Trainer TrainerTwo { get; set; }
         public Trainer winner;
+        public static int trainer1;
+        public static int trainer2;
 
         // Constructor for battle
         public Battle(Trainer trainerOne, Trainer trainerTwo)
@@ -32,6 +34,7 @@ namespace Pokemon_Battle_Simulator
                 Console.WriteLine("");
                 winner = TrainerOne;
                 TrainerTwo.removePokeball();
+                Battle.trainer1++;
                 return winner;
             } else if (pokemonTwo.Strength == pokemonOne.Weakness)
             {
@@ -39,6 +42,7 @@ namespace Pokemon_Battle_Simulator
                 Console.WriteLine("");
                 winner = TrainerTwo;
                 TrainerOne.removePokeball();
+                Battle.trainer2++;
                 return winner;
             }
             else
@@ -47,7 +51,6 @@ namespace Pokemon_Battle_Simulator
                 Console.WriteLine("");
                 TrainerOne.removePokeball();
                 TrainerTwo.removePokeball();
-
                 return winner;
             }
         }

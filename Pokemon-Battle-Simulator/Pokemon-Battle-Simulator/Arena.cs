@@ -10,11 +10,12 @@ namespace Pokemon_Battle_Simulator
     internal class Arena
     {
         // Fields
-        public int BattleCount = 1;
+        public int round = 1;
         public Battle Battle { get; set; }
 
         public Trainer TrainerOne { get; set; }
         public Trainer TrainerTwo { get; set; }
+
 
         // Constructor for arena
         public Arena(Trainer trainerOne, Trainer trainerTwo)
@@ -30,13 +31,9 @@ namespace Pokemon_Battle_Simulator
             this.Battle = battle;
         }
 
-        public int updateBattle()
-        {
-            return BattleCount++;
-        }
-
         public void beginBattle()
         {
+            Console.WriteLine($"Round {round}");
             // The 2 trainers throw their pokeballs off their belt
             Pokeball thrownBallOne = TrainerOne.throw_ball();
             Pokeball thrownBallTwo = TrainerTwo.throw_ball();
@@ -44,6 +41,7 @@ namespace Pokemon_Battle_Simulator
             // The 2 pokeballs are opened
             thrownBallOne.open_ball();
             thrownBallTwo.open_ball();
+            round++;
             if (thrownBallOne != null && thrownBallTwo != null)
             {
                 // The 2 pokemons do their battle cry
@@ -51,8 +49,8 @@ namespace Pokemon_Battle_Simulator
                 thrownBallTwo.Pokemon.battle_cry();
 
                 Trainer winner = Battle.comparePokemon(thrownBallOne, thrownBallTwo);
-
             }
         }
+
     }
 }

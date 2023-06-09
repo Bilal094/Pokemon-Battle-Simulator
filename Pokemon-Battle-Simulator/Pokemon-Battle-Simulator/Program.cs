@@ -6,7 +6,6 @@ public class Program
 {
     static void Main(string[] args)
     {
-        int count = 0;
         bool answer = true;
         while (answer)
         {
@@ -17,7 +16,6 @@ public class Program
             Console.WriteLine("Name trainer 2 ...");
             newName = Console.ReadLine().ToLower();
             Trainer trainer2 = new Trainer(newName);
-
 
             for(int i = 1; i <= 3; i++)
             {
@@ -34,23 +32,18 @@ public class Program
 
             // Creation of the arena after the trainers were made
             Arena arena = new Arena(trainer1, trainer2);
-
-            // Method creates a battle, which returns a battle object and the battle object goes into the other method
-            
             arena.createBattle();
 
-            Console.WriteLine("");
-            Console.WriteLine("Battle " + arena.BattleCount);
             while (trainer1.belt.Count > 0 || trainer2.belt.Count > 0)
             {
                 arena.beginBattle();
                 if (trainer2.belt.Count == 0)
                 {
-                    Console.WriteLine($"Trainer {trainer1.Name} wins!");
+                    Console.WriteLine($"Trainer {trainer1.Name} wins with {Battle.trainer1} points");
                     break;
                 } else if (trainer1.belt.Count == 0)
                 {
-                    Console.WriteLine($"Trainer {trainer2.Name} wins!");
+                    Console.WriteLine($"Trainer {trainer2.Name} wins with {Battle.trainer2} points");
                     break;
                 }
             }
@@ -61,10 +54,6 @@ public class Program
             if (replay == "N")
             {
                 break;
-            } else if (replay == "Y")
-            {
-                arena.updateBattle();
-                arena.BattleCount = arena.updateBattle();
             }
         }
     }
